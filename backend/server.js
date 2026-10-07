@@ -18,7 +18,7 @@ connectDB();
 const app = express(); // <-- app must be initialized here!
 
 app.use(cors({
-  origin: ['https://learn-hub-mern-lms-bygw.vercel.app', 'http://localhost:5173'],
+  origin: ['*'],
   credentials: true
 }));
 
