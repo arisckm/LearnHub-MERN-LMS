@@ -15,14 +15,11 @@ const userRoutes = require('./routes/userRoutes');
 
 connectDB();
 
-const app = express();
-
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || '*',
-    credentials: true,
-  })
-);
+const cors = require('cors');
+app.use(cors({
+  origin: ['https://learn-hub-mern-lms-bygw.vercel.app', 'http://localhost:5173'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
