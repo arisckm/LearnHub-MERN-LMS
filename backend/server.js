@@ -42,6 +42,7 @@ app.use('/api/enrollments', enrollmentRoutes);
 app.use('/api/users', userRoutes);
 
 // Serve React build in production (if hosting frontend and backend together; optional if separated on Vercel)
+// REMOVE THIS BLOCK:
 if (process.env.NODE_ENV === 'production') {
   const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
   app.use(express.static(frontendPath));
@@ -51,7 +52,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   app.get('/', (req, res) => res.send('LearnHub API is running in development mode...'));
 }
-
 app.use(notFound);
 app.use(errorHandler);
 
