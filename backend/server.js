@@ -15,10 +15,8 @@ const userRoutes = require('./routes/userRoutes');
 
 connectDB();
 
-const cors = require('cors');
-
 app.use(cors({
-  origin: '*', // Allows requests from any frontend domain
+  origin: true, // Dynamically allows the requesting origin and supports credentials
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
