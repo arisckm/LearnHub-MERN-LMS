@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const express = require('express');
+const app = express(); // <--- Instantiated right here!
 const cors = require('cors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
@@ -40,7 +41,7 @@ app.use('/api/courses', courseRoutes);
 app.use('/api/enrollments', enrollmentRoutes);
 app.use('/api/users', userRoutes);
 
-// Serve React build in production
+// Serve React build in production (if hosting frontend and backend together; optional if separated on Vercel)
 if (process.env.NODE_ENV === 'production') {
   const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
   app.use(express.static(frontendPath));
