@@ -1,6 +1,8 @@
 {
   "name": "learnhub-backend",
   "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
   "description": "LearnHub MERN LMS - Backend API",
   "main": "server.js",
   "type": "commonjs",
